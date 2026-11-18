@@ -1,0 +1,45 @@
+# dependencies
+node_modules/
+.pnp/
+.pnp.js
+
+# builds
+.next/
+out/
+dist/
+build/
+*.tsbuildinfo
+
+# environment / secrets (never commit real values)
+.env
+.env.*
+!.env.example
+!.env.*.example
+.dev.vars
+
+# local development data (file storage driver + worker spool)
+.data/
+apps/*/.data/
+packages/*/.data/
+
+# logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+logs/
+
+# editor / OS
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+*.swp
+
+# vercel
+.vercel
+
+# misc
+coverage/

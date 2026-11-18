@@ -1,0 +1,26 @@
+{
+  "name": "orion-control",
+  "version": "1.0.0",
+  "private": true,
+  "description": "ORION CONTROL — game community operations and monitoring platform",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "build:shared": "npm run build --workspace @orion/shared",
+    "dev:web": "npm run dev --workspace @orion/web",
+    "dev:worker": "npm run dev --workspace @orion/worker",
+    "build": "npm run build:shared && npm run build --workspace @orion/web && npm run build --workspace @orion/worker",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "db:migrate": "npm run db:migrate --workspace @orion/web",
+    "db:seed": "npm run db:seed --workspace @orion/web",
+    "postinstall": "npm run build:shared"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3"
+  },
+  "engines": {
+    "node": ">=20.9.0"
+  }
+}
